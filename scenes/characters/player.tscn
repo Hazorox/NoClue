@@ -1,0 +1,145 @@
+[gd_scene format=3 uid="uid://cvr6opvp31hp6"]
+
+[ext_resource type="PackedScene" uid="uid://h4wo2mqnh48o" path="res://scenes/characters/character.tscn" id="1_1in0h"]
+[ext_resource type="Script" uid="uid://cdtadhuphxfgh" path="res://scenes/characters/player.gd" id="2_1d5f1"]
+[ext_resource type="Texture2D" uid="uid://bu6j81r7qoqb" path="res://assets/characters/player/male_hero.png" id="3_dyp2m"]
+[ext_resource type="PackedScene" uid="uid://c6incy0vxd2f1" path="res://scenes/characters/enemy_slot.tscn" id="4_cma4q"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dyp2m"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="Animation" id="Animation_dyp2m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [20]
+}
+
+[sub_resource type="Animation" id="Animation_atpat"]
+resource_name = "idle"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+
+[sub_resource type="Animation" id="Animation_76oj4"]
+resource_name = "walk"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CharacterSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23, 24, 25, 26, 27, 29]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dyp2m"]
+_data = {
+&"RESET": SubResource("Animation_dyp2m"),
+&"idle": SubResource("Animation_atpat"),
+&"walk": SubResource("Animation_76oj4")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xc3oh"]
+size = Vector2(17.5, 6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
+radius = 5.0
+height = 18.0
+
+[node name="Player" unique_id=1227198451 groups=["player"] instance=ExtResource("1_1in0h")]
+collision_layer = 2
+collision_mask = 137
+script = ExtResource("2_1d5f1")
+max_duration_between_succesful_hits = 2000
+can_respawn = true
+damage = 5
+damage_power = 6
+max_health = 40
+type = 0
+duration_grounded = 0.0
+flight_speed = 0.0
+jump_intensity = 100.0
+knockback_intensity = 0.0
+knockdown_intensity = 0.0
+speed = 100.0
+height = 100.0
+height_speed = 100.0
+
+[node name="CharacterSprite" parent="." index="0" unique_id=148271320]
+position = Vector2(-1, -16)
+texture = ExtResource("3_dyp2m")
+hframes = 10
+vframes = 8
+frame = 20
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=301119565]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_dyp2m")
+
+[node name="AnimationPlayer" parent="." index="2" unique_id=87531745]
+libraries/ = SubResource("AnimationLibrary_dyp2m")
+autoplay = &"idle"
+
+[node name="DamageEmitter" parent="." index="3" unique_id=831628333]
+position = Vector2(0, -12)
+collision_mask = 112
+
+[node name="CollisionShape2D" parent="DamageEmitter" index="0"]
+position = Vector2(38, -6)
+shape = SubResource("RectangleShape2D_xc3oh")
+
+[node name="DamageReceiver" parent="." index="4" unique_id=946738810]
+collision_layer = 16
+
+[node name="CollisionShape2D" parent="DamageReceiver" index="0" unique_id=1515823495]
+position = Vector2(-1, -18)
+shape = SubResource("CapsuleShape2D_atpat")
+
+[node name="EnemySlots" type="Node2D" parent="." index="5" unique_id=1063333483]
+
+[node name="EnemySlot" parent="EnemySlots" index="0" unique_id=1533098404 instance=ExtResource("4_cma4q")]
+position = Vector2(13, 2)
+
+[node name="EnemySlot2" parent="EnemySlots" index="1" unique_id=79504485 instance=ExtResource("4_cma4q")]
+position = Vector2(13, -3)
+
+[node name="EnemySlot3" parent="EnemySlots" index="2" unique_id=1668952031 instance=ExtResource("4_cma4q")]
+position = Vector2(-13, 2)
+
+[node name="EnemySlot4" parent="EnemySlots" index="3" unique_id=2145084953 instance=ExtResource("4_cma4q")]
+position = Vector2(-13, -3)
+
+[node name="ProjectileAim" parent="." index="7" unique_id=1235377950]
+collision_mask = 12
+
+[editable path="DamageEmitter"]
+[editable path="DamageReceiver"]
+[editable path="CollateralDamageEmitter"]
