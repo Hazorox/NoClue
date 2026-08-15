@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="NoClue"
-run/main_scene="uid://cpdd7usxf68gn"
+run/main_scene="uid://3fgemay46ftr"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -21,8 +21,8 @@ Game="*uid://bfk12c7aw4vbn"
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=240
+window/size/viewport_width=640
+window/size/viewport_height=480
 window/size/mode=3
 window/size/borderless=true
 window/stretch/mode="canvas_items"
