@@ -63,11 +63,3 @@ func add_txt():
 	
 func change_stage(next):
 	cur_state = next
-	match cur_state:
-		state.READY:
-			print("x")
-		state.RUNNING:
-			print("x")
-		state.END:
-			print("x")
-		

@@ -1,10 +1,12 @@
 [gd_scene format=4 uid="uid://dl1wv0p8kmwko"]
 
 [ext_resource type="Texture2D" uid="uid://cmyqlahvr0l35" path="res://assets/Tiny Dungeon Pack/Tilesets/Room/Room_blue.png" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://bie06kgakj6qd" path="res://scenes/cat/cat.tscn" id="2_hujxm"]
 [ext_resource type="PackedScene" uid="uid://dy0u30qkgqv0t" path="res://scenes/player.tscn" id="2_iuonh"]
 [ext_resource type="Script" uid="uid://dy36s5sl8a313" path="res://scenes/main/door.gd" id="3_k2fmo"]
 [ext_resource type="AudioStream" uid="uid://bob0bbet055a1" path="res://assets/rickroll.mp3" id="4_l3cfh"]
 [ext_resource type="Script" uid="uid://bwmbcme8tf61j" path="res://scenes/main/transition_layer.gd" id="5_6q06x"]
+[ext_resource type="PackedScene" uid="uid://cpdd7usxf68gn" path="res://scenes/ui/ui.tscn" id="6_ow5a4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hyk8p"]
 texture = ExtResource("1_hyk8p")
@@ -222,6 +224,14 @@ sources/0 = SubResource("TileSetAtlasSource_k2fmo")
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfrx5"]
 radius = 16.124516
 
+[sub_resource type="GDScript" id="GDScript_u7n8c"]
+script/source = "extends AudioStreamPlayer
+func _process(delta: float) -> void:
+	if game.room == game.rooms_to_win:
+		play()
+		game.room=1
+"
+
 [node name="Main" type="Node2D" unique_id=69701792]
 
 [node name="floor" type="TileMapLayer" parent="." unique_id=509278928]
@@ -238,6 +248,10 @@ tile_set = SubResource("TileSet_tr8j5")
 position = Vector2(-7, 9)
 tile_map_data = PackedByteArray("AAADAP//AAAGAAEAAAADAAAAAAAGAAIAAAAEAP//AAAHAAEAAAAEAAAAAAAHAAIAAAAFAP//AAAIAAEAAAAFAAAAAAAIAAIAAAAOAP//AAAGAAEAAAAOAAAAAAAGAAIAAAAPAP//AAAHAAEAAAAPAAAAAAAHAAIAAAAQAP//AAAIAAEAAAAQAAAAAAAIAAIAAAADAAwAAAAGAAYAAAAEAAwAAAAHAAYAAAAFAAwAAAAIAAYAAAAOAAwAAAAGAAYAAAAPAAwAAAAHAAYAAAAQAAwAAAAIAAYAAAAEAAsAAAACAAkAAAAPAAsAAAACAAkAAAAEAAIAAAACAAcAAAAPAAIAAAACAAcAAAASAAUAAAAIAAMAAAASAAcAAAAIAAUAAAATAAUAAAAIAAMAAAATAAYAAAAIAAQAAAATAAcAAAAIAAUAAAAUAAUAAAAJAAMAAAAUAAYAAAAJAAQAAAAUAAcAAAAJAAUAAAASAAYAAAADAAgAAAA=")
 tile_set = SubResource("TileSet_8t61q")
+
+[node name="CharacterBody2D" parent="." unique_id=995654100 instance=ExtResource("2_hujxm")]
+position = Vector2(28.999998, 149.99998)
+scale = Vector2(0.2, 0.2)
 
 [node name="Player" parent="." unique_id=1782809919 instance=ExtResource("2_iuonh")]
 position = Vector2(160, 120)
@@ -294,13 +308,24 @@ shape = SubResource("CircleShape2D_nfrx5")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1242952219 groups=["rickroll"]]
 stream = ExtResource("4_l3cfh")
+script = SubResource("GDScript_u7n8c")
 
 [node name="TransitionLayer" type="CanvasLayer" parent="." unique_id=835245420]
+visible = false
 script = ExtResource("5_6q06x")
 
 [node name="ColorRect" type="ColorRect" parent="TransitionLayer" unique_id=1397366266]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ui" parent="." unique_id=857766069 instance=ExtResource("6_ow5a4")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
