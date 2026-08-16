@@ -14,4 +14,3 @@ func advance(success:bool)->void:
 	else:
 		room=1
 	correct_door = RandomNumberGenerator.new().randi_range(1,5)
-	print("NEW CORRECT DOOR : ",correct_door)
