@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://cpdd7usxf68gn"]
 
-[ext_resource type="PackedScene" uid="uid://bh7uienudwmps" path="res://scenes/ui/dialogue.tscn" id="1_u7n8c"]
+[ext_resource type="Script" uid="uid://dhifwwknfjtgf" path="res://scenes/ui/textBox.gd" id="1_u7n8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5qlm"]
+font_size = 11
+
+[sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
+font_size = 12
+
+[sub_resource type="GDScript" id="GDScript_nfrx5"]
+script/source = "extends Label
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	text = \"Room : \" + str(game.room)
+"
 
 [node name="ui" type="Control" unique_id=857766069]
 layout_mode = 3
@@ -41,3 +55,12 @@ offset_bottom = 70.0
 text = "Text"
 label_settings = SubResource("LabelSettings_n5qlm")
 autowrap_mode = 3
+
+[node name="room" type="Label" parent="." unique_id=1240125646]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 50.0
+offset_bottom = 43.0
+label_settings = SubResource("LabelSettings_nfrx5")
+script = SubResource("GDScript_nfrx5")
