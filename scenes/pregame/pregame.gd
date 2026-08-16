@@ -6,7 +6,7 @@ extends Node
 @onready var verdicts = ["SUCKER, BE STRONGER!!","That's too many T-T ( <20 )"]
 
 func _ready()->void:
-	scoreLabel.text = str(Game.rooms_to_win)
+	scoreLabel.text = str(game.rooms_to_win)
 
 func _on_minus_pressed() -> void:
 	scoreLabel.text = str(int(scoreLabel.text) - 1)
@@ -26,5 +26,5 @@ func _on_start_pressed() -> void:
 		return
 	else:
 		verdict.visible=false
-		
+	game.rooms_to_win = int(scoreLabel.text)
 	get_tree().change_scene_to_file("res://scenes/main/main.tscn")
