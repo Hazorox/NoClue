@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://b16dngsxeklx5" path="res://scenes/pregame/pregame.gd" id="1_bvgth"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_itfyq"]
-font_size = 32
+font_size = 28
 
 [sub_resource type="LabelSettings" id="LabelSettings_nfrx5"]
 font_size = 14
@@ -90,14 +90,8 @@ custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_font_sizes/font_size = 24
+theme_override_font_sizes/font_size = 20
 text = "START"
-
-[node name="verdict" type="Label" parent="contents" unique_id=1794517648]
-visible = false
-layout_mode = 2
-text = "SUCKER, BE STRONG !!"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="contents/scoreControl/buttons/plus" to="." method="_on_plus_pressed"]
 [connection signal="pressed" from="contents/scoreControl/buttons/minus" to="." method="_on_minus_pressed"]
