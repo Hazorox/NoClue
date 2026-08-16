@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://dcsycuxtof7rt" path="res://scenes/components/hurt_component.gd" id="11_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://cle3cwffivo4w" path="res://scenes/components/hit_component.tscn" id="12_i7n4v"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_p77b1"]
+radius = 5.0990195
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcfqd"]
 atlas = ExtResource("1_frvdw")
 region = Rect2(48, 240, 48, 48)
@@ -406,7 +409,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pkydc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"chopping_back",
 "speed": 3.0
 }, {
@@ -417,7 +420,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j4loj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"chopping_front",
 "speed": 3.0
 }, {
@@ -428,7 +431,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j8koh")
 }],
-"loop": false,
+"loop": 0,
 "name": &"chopping_left",
 "speed": 3.0
 }, {
@@ -439,7 +442,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fx2sf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"chopping_right",
 "speed": 3.0
 }, {
@@ -456,7 +459,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i5hbf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hitting_back",
 "speed": 5.0
 }, {
@@ -473,7 +476,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rfc0u")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hitting_front",
 "speed": 5.0
 }, {
@@ -490,7 +493,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_o6x1v")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hitting_left",
 "speed": 5.0
 }, {
@@ -507,7 +510,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_21pn7")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hitting_right",
 "speed": 5.0
 }, {
@@ -530,7 +533,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ye82n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_back",
 "speed": 6.0
 }, {
@@ -553,7 +556,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yn5o1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_front",
 "speed": 6.0
 }, {
@@ -576,7 +579,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vi35o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_left",
 "speed": 6.0
 }, {
@@ -599,7 +602,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5estx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_right",
 "speed": 6.0
 }, {
@@ -610,7 +613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bx1i0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"mining_back",
 "speed": 3.0
 }, {
@@ -621,7 +624,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b0tr0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"mining_front",
 "speed": 3.0
 }, {
@@ -632,7 +635,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bmp6q")
 }],
-"loop": false,
+"loop": 0,
 "name": &"mining_left",
 "speed": 3.0
 }, {
@@ -643,7 +646,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dtcs5")
 }],
-"loop": false,
+"loop": 0,
 "name": &"mining_right",
 "speed": 3.0
 }, {
@@ -654,7 +657,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d4eq4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"tilling_back",
 "speed": 3.0
 }, {
@@ -665,7 +668,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_k3lnl")
 }],
-"loop": false,
+"loop": 0,
 "name": &"tilling_front",
 "speed": 3.0
 }, {
@@ -676,7 +679,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_effq0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"tilling_left",
 "speed": 3.0
 }, {
@@ -687,7 +690,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_auskt")
 }],
-"loop": false,
+"loop": 0,
 "name": &"tilling_right",
 "speed": 3.0
 }, {
@@ -710,7 +713,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_74yv8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_back",
 "speed": 6.0
 }, {
@@ -733,7 +736,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0wh7p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_front",
 "speed": 6.0
 }, {
@@ -756,7 +759,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jcrqa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_left",
 "speed": 6.0
 }, {
@@ -779,7 +782,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkwm2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_right",
 "speed": 6.0
 }, {
@@ -790,7 +793,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_203nj")
 }],
-"loop": false,
+"loop": 0,
 "name": &"watering_back",
 "speed": 3.0
 }, {
@@ -801,7 +804,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wndfc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"watering_front",
 "speed": 3.0
 }, {
@@ -812,7 +815,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_42dao")
 }],
-"loop": false,
+"loop": 0,
 "name": &"watering_left",
 "speed": 3.0
 }, {
@@ -823,13 +826,10 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_16vvo")
 }],
-"loop": false,
+"loop": 0,
 "name": &"watering_right",
 "speed": 3.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_p77b1"]
-radius = 5.0990195
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fx2sf"]
 radius = 4.0
@@ -839,20 +839,19 @@ size = Vector2(7, 6)
 
 [node name="Player" type="CharacterBody2D" unique_id=1782809919 groups=["player"]]
 y_sort_enabled = true
-collision_layer = 0
 collision_mask = 0
 script = ExtResource("1_wcfqd")
 current_tool = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=769047643]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_p77b1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=176625218]
 position = Vector2(-1, -7)
 sprite_frames = SubResource("SpriteFrames_u44mj")
 animation = &"idle_front"
 autoplay = "idle_front"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=769047643]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_p77b1")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1312388250 node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("6_hyqdm")
