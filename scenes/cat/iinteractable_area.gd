@@ -10,11 +10,11 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("interactable"):
-		dialogue.tqueue("Meow! I'm a talking cat.")
+		dialogue.tqueue("Meow! ".repeat(game.correct_door))
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("interactable"):
-		dialogue.tqueue("Meow! I'm a talking cat.")
+		dialogue.tqueue("Meow! ".repeat(game.correct_door))
 
 func _on_area_exited(_area: Area2D) -> void:
 	pass

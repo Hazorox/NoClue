@@ -81,7 +81,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_t8swq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Idle",
 "speed": 4.0
 }, {
@@ -98,7 +98,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rds3p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"rest",
 "speed": 3.0
 }, {
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_iptxc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 9.0
 }]
@@ -139,7 +139,7 @@ height = 29.373442
 [sub_resource type="CircleShape2D" id="CircleShape2D_s7rlf"]
 radius = 240.01042
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=995654100 groups=["interactable"]]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=995654100]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2077803405]
 position = Vector2(0, -160)
