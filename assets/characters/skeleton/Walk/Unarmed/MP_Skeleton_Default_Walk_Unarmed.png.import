@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg45xl1vn8hlg"
-path="res://.godot/imported/Equinox_cat0.png-c4d46463938a8de38128ec8adc955290.ctex"
+uid="uid://dq7rhge2qkb2t"
+path="res://.godot/imported/MP_Skeleton_Default_Walk_Unarmed.png-e5f4470871754ca21d286d04f5ec4df8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cat/Equinox_cat0.png"
-dest_files=["res://.godot/imported/Equinox_cat0.png-c4d46463938a8de38128ec8adc955290.ctex"]
+source_file="res://assets/characters/skeleton/Walk/Unarmed/MP_Skeleton_Default_Walk_Unarmed.png"
+dest_files=["res://.godot/imported/MP_Skeleton_Default_Walk_Unarmed.png-e5f4470871754ca21d286d04f5ec4df8.ctex"]
 
 [params]
 
