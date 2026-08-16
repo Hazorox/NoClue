@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c5c8nhl3dshir" path="res://scenes/characters/enemies/enemy_slot.tscn" id="10_3v2ag"]
 [ext_resource type="Script" uid="uid://dcsycuxtof7rt" path="res://scenes/components/hurt_component.gd" id="11_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://cle3cwffivo4w" path="res://scenes/components/hit_component.tscn" id="12_i7n4v"]
+[ext_resource type="Script" uid="uid://c1r3ybc7cucpf" path="res://scenes/interactable.gd" id="13_jej6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcfqd"]
 atlas = ExtResource("1_frvdw")
@@ -837,6 +838,9 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(7, 6)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ej7"]
+size = Vector2(7, 9)
+
 [node name="Player" type="CharacterBody2D" unique_id=1782809919 groups=["player"]]
 y_sort_enabled = true
 collision_layer = 0
@@ -904,3 +908,11 @@ metadata/_custom_type_script = "uid://dcsycuxtof7rt"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent" unique_id=380830215]
 position = Vector2(-0.5, -4)
 shape = SubResource("RectangleShape2D_d2wvv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=547574008]
+script = ExtResource("13_jej6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=203782097]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_f1ej7")
+debug_color = Color(6.256998e-07, 0.64170223, 0.33507058, 0.41960785)

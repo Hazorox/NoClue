@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhjo0k50qcyht"
-path="res://.godot/imported/stone_pickaxe.png-d23dca0de5631141b075d38270a39035.ctex"
+uid="uid://c6cbexxouewci"
+path="res://.godot/imported/Equinox_cat0.png-c4d46463938a8de38128ec8adc955290.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/stone_pickaxe.png"
-dest_files=["res://.godot/imported/stone_pickaxe.png-d23dca0de5631141b075d38270a39035.ctex"]
+source_file="res://assets/cat/Equinox_cat0.png"
+dest_files=["res://.godot/imported/Equinox_cat0.png-c4d46463938a8de38128ec8adc955290.ctex"]
 
 [params]
 

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bh7uienudwmps"]
+
+[ext_resource type="Script" uid="uid://dhifwwknfjtgf" path="res://scenes/ui/textBox.gd" id="1_84wqv"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5qlm"]
+font_size = 11
+
+[node name="dialogue" type="CanvasLayer" unique_id=806991386]
+script = ExtResource("1_84wqv")
+
+[node name="tbcontainer" type="MarginContainer" parent="." unique_id=633491482]
+offset_left = 8.0
+offset_top = 144.0
+offset_right = 309.0
+offset_bottom = 232.0
+
+[node name="ColorRect" type="ColorRect" parent="tbcontainer" unique_id=766816444]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="tbcontainer" unique_id=1867856222]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="tbcontainer/MarginContainer" unique_id=1535217405]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="tbcontainer/MarginContainer/ColorRect" unique_id=1494335456]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 273.0
+offset_bottom = 70.0
+text = "Text"
+label_settings = SubResource("LabelSettings_n5qlm")
+autowrap_mode = 3

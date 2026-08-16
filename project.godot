@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 ToolManager="*uid://cp15hvh7ox353"
+DialogueManager="*uid://bh7uienudwmps"
 
 [display]
 
@@ -42,6 +43,7 @@ folder_colors={
 [global_group]
 
 player=""
+interactable=""
 
 [gui]
 

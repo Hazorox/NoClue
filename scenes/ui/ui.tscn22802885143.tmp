@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cpdd7usxf68gn"]
+
+[ext_resource type="Script" uid="uid://dhifwwknfjtgf" path="res://scenes/ui/textBox.gd" id="1_u7n8c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_n5qlm"]
+font_size = 11
+
+[node name="UI" type="Control" unique_id=857766069]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dialogue" type="CanvasLayer" parent="." unique_id=2102918729]
+script = ExtResource("1_u7n8c")
+
+[node name="TBcontainer" type="MarginContainer" parent="Dialogue" unique_id=1879315417]
+offset_left = 8.0
+offset_top = 144.0
+offset_right = 309.0
+offset_bottom = 232.0
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue/TBcontainer" unique_id=1612748230]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Dialogue/TBcontainer" unique_id=1242233389]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="Dialogue/TBcontainer/MarginContainer" unique_id=2081216901]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="Dialogue/TBcontainer/MarginContainer/ColorRect" unique_id=2089142019]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 8.0
+offset_right = 273.0
+offset_bottom = 70.0
+text = "Text"
+label_settings = SubResource("LabelSettings_n5qlm")
+autowrap_mode = 3
