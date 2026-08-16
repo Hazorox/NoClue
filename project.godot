@@ -17,6 +17,7 @@ config/icon="res://assets/icon.svg"
 
 [autoload]
 
+game="*uid://bfk12c7aw4vbn"
 ToolManager="*uid://cp15hvh7ox353"
 
 [display]
@@ -42,6 +43,7 @@ folder_colors={
 [global_group]
 
 player=""
+rickroll=""
 
 [gui]
 
